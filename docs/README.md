@@ -27,3 +27,26 @@ Features:
 [sample-state]: docs/sample-state.md
 [api-endpoints]: docs/api-endpoints.md
 [schema]: docs/schema.md
+
+## Implementation Timeline
+
+### Phase 1: Backend setup and Front End User Authentication (2 days)
+
+**Objective:** Functioning rails project with front-end Authentication
+
+### Phase 2: Recipe Model, API, and components (2 days)
+
+**Objective:** Write CRUD methods for adding a recipe under a user
+
+### Phase 3: Notes (2 days)
+
+**Objective:** Notes belong to a Recipe that can be created, read, edited and destroyed through the API.
+
+### Phase 4: Feed (1 days)
+
+**Objective:** Notes are displayed as a feed based on date; implement on for multiple recipes if time allows.
+
+
+### Bonus Features (TBD)
+- [ ] Filter recipes by tags
+- [ ] Full calendar view of previous and planned recipes
