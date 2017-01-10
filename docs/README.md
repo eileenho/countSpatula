@@ -11,9 +11,16 @@ Count Spatula is an online recipe storage site built using Ruby on Rails and Rea
 Features:
 * account creation, login, and guest/demo login
 * user profile page featuring recipe collection
+* search recipes by tags
 * recipe show page
 * recipe comments and images
-* calendar feed of recently cooked recipes
+
+NOTE TO MYSELF: Routes:
+- recipes don't need to be nested under user/userId
+- add tags table under schema (recipe Id, name of tag, tagId)
+  - look up associating
+- "notes" don't need user id if already linked to recipeId
+- look at formatting sample state in md, update to include tagging
 
 ## Design Docs
 * [View Wireframes][wireframes]
