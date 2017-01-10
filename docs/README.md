@@ -15,13 +15,6 @@ Features:
 * recipe show page
 * recipe comments and images
 
-NOTE TO MYSELF: Routes:
-- recipes don't need to be nested under user/userId
-- add tags table under schema (recipe Id, name of tag, tagId)
-  - look up associating
-- "notes" don't need user id if already linked to recipeId
-- look at formatting sample state in md, update to include tagging
-
 ## Design Docs
 * [View Wireframes][wireframes]
 * [React Components][components]
@@ -49,11 +42,11 @@ NOTE TO MYSELF: Routes:
 
 **Objective:** Notes belong to a Recipe that can be created, read, edited and destroyed through the API.
 
-### Phase 4: Feed (1 days)
+### Phase 4: Search and Tags (1 days)
 
-**Objective:** Notes are displayed as a feed based on date; implement on for multiple recipes if time allows.
+**Objective:** Implement search of recipes through tags.
 
 
 ### Bonus Features (TBD)
-- [ ] Filter recipes by tags
+- [ ] Add recipes through a link
 - [ ] Full calendar view of previous and planned recipes
