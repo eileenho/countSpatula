@@ -29,13 +29,20 @@ class SessionForm extends React.Component {
     });
   }
 
+  // handleSubmit(e) {
+  //   e.preventDefault();
+  //   const user = merge({}, this.state);
+  //   console.log(user);
+  //   this.props.processForm(user).then(() => this.redirect());
+  // }
+
 
   handleSubmit(e) {
-    e.preventDefault();
-    const user = merge({}, this.state);
-    console.log(user);
-    this.props.processForm(user).then(() => this.redirect());
-  }
+		e.preventDefault();
+		const user = this.state;
+		this.props.processForm({user});
+	}
+
 
   navLink() {
     if (this.props.formType === "login") {

@@ -1,0 +1,27 @@
+.nav_logo {
+  display: inline-flex;
+  align-items: center;
+
+  div {
+    width: 350px;
+    height: 150px;
+    background-image: image-url('logo.jpg');
+    background-size: cover;
+  }
+}
+
+.nav_menu {
+  display: inline-flex;
+  align-items: center;
+
+  a {
+    font-size: 14px;
+    padding-left: 40px;
+    font-weight: 600;
+    color: #9297a3;
+
+    &:hover {
+      color: #424242;
+    }
+  }
+}
