@@ -33,6 +33,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = merge({}, this.state);
+    console.log(user);
     this.props.processForm(user).then(() => this.redirect());
   }
 
@@ -58,7 +59,7 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to BenchBnB!
+          Welcome to Count Spatula!
           <br/>
           Please {this.props.formType} or {this.navLink()}
           {this.renderErrors()}

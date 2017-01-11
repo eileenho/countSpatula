@@ -5,8 +5,13 @@ import Root from './components/root';
 import { signup, login, logout } from './util/session_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const store = configureStore();
-  window.store = configureStore();
+  let store;
+  if (window.currentUser) {
+    const preloadedState = { session: { currentUser: window.currentUser } };
+    store = configureStore(preloadedState);
+  } else {
+    store = configureStore();
+  }
   window.login = login;
   window.signup = signup;
   window.logout = logout;
