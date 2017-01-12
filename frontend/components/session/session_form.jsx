@@ -29,18 +29,10 @@ class SessionForm extends React.Component {
     });
   }
 
-  // handleSubmit(e) {
-  //   e.preventDefault();
-  //   const user = merge({}, this.state);
-  //   console.log(user);
-  //   this.props.processForm(user).then(() => this.redirect());
-  // }
-
-
   handleSubmit(e) {
 		e.preventDefault();
 		const user = this.state;
-		this.props.processForm({user});
+		this.props.processForm({user}).then(() => this.props.router.push('/home'));
 	}
 
 
@@ -66,13 +58,14 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to Count Spatula!
+          <h1>Welcome to Count Spatula!</h1>
           <br/>
-          Please {this.props.formType} or {this.navLink()}
+          <h2>Please {this.props.formType} or {this.navLink()}</h2>
           {this.renderErrors()}
           <div className="login-form">
             <br/>
             <label> Username:
+            <br />
               <input type="text"
                      value={this.state.username}
                      onChange={this.update("username")}
@@ -80,6 +73,7 @@ class SessionForm extends React.Component {
             </label>
             <br/>
             <label> Password:
+            <br/>
               <input type="password"
                      value={this.state.password}
                      onChange={this.update("password")}

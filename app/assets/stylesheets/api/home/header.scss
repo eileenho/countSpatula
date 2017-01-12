@@ -1,27 +1,60 @@
-.nav_logo {
-  display: inline-flex;
-  align-items: center;
+.header {
+  font-family: 'Signika', sans-serif;
+  background-color: #F6F7EB;
+  width: 100%;
+  height: 125px;
+  position: absolute;
+  top-padding: 0px;
 
-  div {
-    width: 350px;
-    height: 150px;
-    background-image: image-url('logo.jpg');
-    background-size: cover;
+  .nav_logo {
+    display: inline-flex;
+    align-items: center;
+    float: left;
+    padding: 10px;
+
+    div {
+      height: 100px;
+      width: 225px;
+      background-image: image-url('logo2.jpg');
+      background-size: cover;
+      border: 3px solid #292F36;
+    }
   }
-}
 
-.nav_menu {
-  display: inline-flex;
-  align-items: center;
+  .nav_menu {
+    display: inline-flex;
+    align-items: center;
+    float: right;
+    padding-top: 75px;
+    padding-right: 50px;
 
-  a {
-    font-size: 14px;
-    padding-left: 40px;
-    font-weight: 600;
-    color: #9297a3;
+    a {
+      font-size: 28px;
+      padding-right: 40px;
+      font-weight: 600;
+      color: #292F36;
+      text-decoration: none;
 
-    &:hover {
-      color: #424242;
+      &:hover {
+        color: #23CE6B;
+      }
+    }
+
+    h1 {
+      font-size: 16px;
+      padding-right: 20px;
+    }
+
+    button {
+      font-family: 'Signika', sans-serif;
+      font-size: 16px;
+      padding: 5px;
+      border-radius: 4px;
+
+      &:hover {
+        background-color: #292F36;
+        color: white;
+      }
     }
   }
 }

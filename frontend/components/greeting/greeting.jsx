@@ -9,21 +9,23 @@ const sessionLinks = () => (
     </nav>
     <nav className="nav_menu">
       <Link to="/login">Log In</Link>
-      <Link to="/signup">Sign up!</Link>
+      <Link to="/signup">Sign Up</Link>
     </nav>
   </div>
 );
 
-const personalGreeting = (currentUser, logout) => {
-  return (<div className="header">
+const personalGreeting = (currentUser, logout) => (
+  <div className="header">
     <nav className="nav_logo">
       <div></div>
       <Link to="/home"></Link>
     </nav>
-    <h1>Welcome, {currentUser.username}!</h1>
-    <button onClick={ logout }>Logout</button>
-  </div>);
-};
+    <nav className="nav_menu">
+      <h1>Welcome, {currentUser.username}!</h1>
+      <button onClick={ logout }>Logout</button>
+    </nav>
+  </div>
+);
 
 const Greeting = ({ currentUser, logout }) => (
   currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
