@@ -1,16 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { withRouter, Link } from 'react-router';
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.loginGuest = this.loginGuest.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   loginGuest(e) {
-    e.preventDefault(e);
+    e.preventDefault();
     const guest = { user: {username: "guest", password: "password"}};
-    this.props.login(guest);
+    this.props.login(guest).then(() => this.props.router.push('/profile'));
+  }
+
+  handleLogout() {
+    this.props.logout().then(() => this.props.router.push('/'));
   }
 
   userLink() {
@@ -24,7 +29,7 @@ class Header extends React.Component {
       navMenu = (
         <ul className="nav-menu">
           <li><Link to="/profile">{ this.userLink() }</Link></li>
-          <li><button onClick={ this.props.logout }>Logout</button></li>
+          <li><button onClick={ this.handleLogout }>Logout</button></li>
         </ul>
       );
     } else {
@@ -50,4 +55,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);
