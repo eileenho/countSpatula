@@ -1,21 +1,60 @@
-.login-form-box {
+.login-form-container {
   font-family: 'Signika', sans-serif;
-  background-color: #23CE6B;
-  width: 400px;
+  background-color: rgba(236, 241, 242, 0.7);
+  width: 300px;
   margin: auto;
   padding: 20px;
   text-align: center;
-}
+  z-index: 1;
+  position: relative;
+  display: block;
+  border-radius: 3px;
+  box-shadow: 0 0 5px black;
+  margin-top: 50px;
 
-.login-form {
-  font-size: 16px;
-
-  label, input {
-    margin: auto;
+  h1 {
+    padding: 5px;
+    font-size: 32px;
   }
 
-}
+  .login-form {
+    margin: auto;
 
-.form-button {
+    label {
+      font-size: 20px;
+    }
+
+    input {
+      background: white;
+      margin-bottom: 10px;
+      height: 30px;
+      line-height: 40px;
+      padding: 0px 6px;
+      width: 250px;
+      color: #272635;
+      border: 1px solid #c3c2c2;
+      border-radius: 5px;
+      font-size: 12px;
+    }
+
+    a {
+      font-size: 16px;
+    }
+
+    .form-button {
+      width: 250px;
+      background: #A4250D;
+      color: #ECF1F2;
+      font-size: 16px;
+      padding: 5px;
+      border-radius: 4px;
+
+      &:hover {
+        background-color: #292F36;;
+      }
+
+    }
+
+  }
 
 }

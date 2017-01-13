@@ -13,13 +13,17 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    this.redirectIfLoggedIn();
+  }
+
   componentDidUpate() {
     this.redirectIfLoggedIn();
   }
 
   redirectIfLoggedIn() {
     if (this.props.loggedIn) {
-      this.props.router.push("/");
+      this.props.router.replace("/");
     }
   }
 
@@ -32,7 +36,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
 		e.preventDefault();
 		const user = this.state;
-		this.props.processForm({user}).then(() => this.props.router.push('/home'));
+		this.props.processForm({user}).then(() => this.props.router.push('/profile'));
 	}
 
 
@@ -41,6 +45,14 @@ class SessionForm extends React.Component {
       return <Link to="/signup">Sign Up</Link>;
     } else {
       return <Link to="/login">Login</Link>;
+    }
+  }
+
+  buttonValue() {
+    if (this.props.formType === "login") {
+      return "Log In";
+    } else {
+      return "Sign Up";
     }
   }
 
@@ -58,12 +70,9 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <h1>Welcome to Count Spatula!</h1>
-          <br/>
-          <h2>Please {this.props.formType} or {this.navLink()}</h2>
+          <h1>Welcome to Spatula!</h1>
           {this.renderErrors()}
           <div className="login-form">
-            <br/>
             <label> Username:
             <br />
               <input type="text"
@@ -71,16 +80,16 @@ class SessionForm extends React.Component {
                      onChange={this.update("username")}
                      className="login-input" />
             </label>
-            <br/>
+            <br />
             <label> Password:
-            <br/>
+            <br />
               <input type="password"
                      value={this.state.password}
                      onChange={this.update("password")}
                      className="login-input" />
             </label>
-            <br/>
-            <input type="submit" value="Submit" />
+            <br />
+            <button className="form-button" type="submit">{ this.buttonValue() }</button>
           </div>
         </form>
       </div>
