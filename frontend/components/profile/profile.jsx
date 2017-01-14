@@ -5,7 +5,8 @@ class Profile extends React.Component {
 
   render () {
     return (
-      <div className="profile">Profile Goes Here
+      <div className="profile">
+        <span>Add New Recipe</span>
         <RecipesIndexContainer />
       </div>
     );

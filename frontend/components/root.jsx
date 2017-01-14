@@ -5,7 +5,8 @@ import App from './app';
 
 import SessionFormContainer from './session/session_form_container';
 import Welcome from './welcome';
-import Profile from './profile/profile';
+import ProfileContainer from './profile/profile_container';
+import RecipeContainer from './recipes/recipe_container';
 
 const Root = ({store}) => {
 
@@ -25,7 +26,8 @@ const Root = ({store}) => {
                                onEnter={_redirectIfLoggedIn}/>
           <Route path="/signup" component={ SessionFormContainer }
                                 onEnter={_redirectIfLoggedIn}/>
-          <Route path="/profile" component= { Profile } />
+          <Route path="/profile" component= { ProfileContainer } />
+          <Route path="/profile/:id" component= { RecipeContainer } />
         </Route>
       </Router>
     </Provider>

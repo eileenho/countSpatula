@@ -9,7 +9,7 @@ class RecipeIndexItem extends React.Component {
 
   handleClick() {
     const recipeId = this.props.recipe.id;
-    this.props.router.push(`recipes/${recipeId}`);
+    this.props.router.push(`/profile/${recipeId}`);
   }
 
   render() {
