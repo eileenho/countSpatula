@@ -7,3 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 guest = User.create(username: "guest", password: "password")
+
+recipe1 = Recipe.new(title: "Double double", one_liner: "get into my belly", user_id: 1, image_url: "http://images.onset.freedom.com/ocregister/nz1tfc-doubledoublephotojpeg.jpg")

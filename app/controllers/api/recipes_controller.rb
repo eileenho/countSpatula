@@ -1,5 +1,7 @@
 class Api::RecipesController < ApplicationController
 
+  before_filter :require_logged_in
+
   def create
     @recipe = Recipe.new(recipe)
 
@@ -17,7 +19,7 @@ class Api::RecipesController < ApplicationController
   end
 
   def index
-    @recipes = Recipe.all
+    @recipes = current_user.recipes
   end
 
   def show
@@ -27,6 +29,6 @@ class Api::RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :description, :image_url)
+    params.require(:recipe).permit(:title, :one_liner, :directions, :ingredients, :image_url)
   end
 end
