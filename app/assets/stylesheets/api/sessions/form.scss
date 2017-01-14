@@ -6,7 +6,11 @@
   padding: 20px;
   text-align: center;
   z-index: 1;
-  position: relative;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
   display: block;
   border-radius: 3px;
   box-shadow: 0 0 5px black;

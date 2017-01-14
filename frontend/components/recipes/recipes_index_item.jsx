@@ -17,11 +17,11 @@ class RecipeIndexItem extends React.Component {
 
     return (
       <div className="recipe-index-item" onClick = {this.handleClick}>
-        <div className="recipe-index-title">
-          <h1>{ title }</h1>
-        </div>
         <div className="recipe-index-image">
           <img src={ image_url } />
+        </div>
+        <div className="recipe-index-title">
+          <p>{ title }</p>
         </div>
       </div>
     );

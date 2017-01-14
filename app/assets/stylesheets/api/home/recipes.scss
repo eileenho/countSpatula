@@ -1,0 +1,35 @@
+.recipe-index-container {
+  width: 900px;
+  margin: auto;
+  background-color: #ffa513;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.recipe-index-item {
+  float: left;
+  position: relative;
+  width: 280px;
+  margin: 5px;
+}
+
+.recipe-index-image {
+  position: relative;
+  display: block;
+  height: 200px;
+  width: 280px;
+  overflow: hidden;
+  object-fit: contain;
+  width: auto;
+}
+
+.recipe-index-title {
+  text-align: center;
+  font-size: 12px;
+
+  &:hover {
+    color: #A4250D
+  }
+}
