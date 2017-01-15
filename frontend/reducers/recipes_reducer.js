@@ -8,7 +8,7 @@ const RecipesReducer = (state = {}, action) => {
     case RECEIVE_ALL_RECIPES:
       return merge({}, action.recipes);
     case RECEIVE_RECIPE:
-      return merge({}, state, {[action.recipe.id]: action.recipe});
+      return merge({}, {[action.recipe.id]: action.recipe});
     default:
       return state;
   }

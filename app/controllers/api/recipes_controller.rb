@@ -3,7 +3,7 @@ class Api::RecipesController < ApplicationController
   before_filter :require_logged_in
 
   def create
-    @recipe = Recipe.new(recipe)
+    @recipe = Recipe.new(recipe_params)
 
     if @recipe.save
       render :show
@@ -24,6 +24,7 @@ class Api::RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @notes = @recipe.notes
   end
 
   private

@@ -1,4 +1,5 @@
 import * as RecipeApiUtil from '../util/recipe_api_util';
+import { receiveAllNotes } from './note_actions';
 
 export const RECEIVE_ALL_RECIPES = "RECEIVE_ALL_RECIPES";
 export const RECEIVE_RECIPE = "RECEIVE_RECIPE";
@@ -10,7 +11,10 @@ export const requestAllRecipes = () => dispatch => (
 );
 
 export const requestRecipe = id => dispatch => (
-  RecipeApiUtil.fetchRecipe(id).then(recipe => dispatch(receiveRecipe(recipe)))
+  RecipeApiUtil.fetchRecipe(id).then(res => {
+    dispatch(receiveAllNotes(res.notes));
+    return dispatch(receiveRecipe(res.recipe));
+  })
 );
 
 export const createRecipe = recipe => dispatch => (
