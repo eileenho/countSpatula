@@ -6,12 +6,6 @@ class Api::RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
 
     if @recipe.save
-      # ingredient_params[:ingredients].each do |ingredient|
-      #   @recipe.ingredients.create(name: ingredient)
-      # end
-      # direction_params[:directions].each do |direction|
-      #   @recipe.directions.create(name: direction)
-      # end
       render :show
     else
       p @recipe.errors.full_messages
@@ -27,11 +21,15 @@ class Api::RecipesController < ApplicationController
 
   def index
     @recipes = current_user.recipes
+    if @recipes
+      render :index
+    else
+      render(json: ["No recipes"], status: 422)
+    end
   end
 
   def show
     @recipe = Recipe.find(params[:id])
-    # @notes = @recipe.notes
   end
 
   private
