@@ -31,7 +31,7 @@ class NoteForm extends React.Component {
           <h1>Add note</h1>
           <div className="note-form">
             <label>Date cooked: <br />
-              <input type="text"
+              <input type="date"
                      value={this.state.cooked_date}
                      onChange={this.update("cooked_date")}
                      className="note-form-date" />

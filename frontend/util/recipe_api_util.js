@@ -19,3 +19,19 @@ export const createRecipe = recipe => (
     data: { recipe }
   })
 );
+
+export const updateRecipe = recipe => (
+  $.ajax({
+    method: 'PATCH',
+    url: `/api/recipes/${recipe.id}`,
+    data: { recipe }
+  })
+);
+
+
+export const deleteRecipe = id => (
+  $.ajax({
+    method: 'DELETE',
+    url: `/api/recipes/${id}`
+  })
+);

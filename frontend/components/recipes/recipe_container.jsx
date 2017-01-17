@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Recipe from './recipe';
-import { requestRecipe } from '../../actions/recipe_actions';
+import { requestRecipe, deleteRecipe } from '../../actions/recipe_actions';
 
 const mapStateToProps = ( state, {params}) => ({
   recipeId: params.id,
@@ -8,7 +8,8 @@ const mapStateToProps = ( state, {params}) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  requestRecipe: (id) => dispatch(requestRecipe(id))
+  requestRecipe: (id) => dispatch(requestRecipe(id)),
+  deleteRecipe: (id) => dispatch(deleteRecipe(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Recipe);

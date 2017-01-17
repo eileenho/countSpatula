@@ -12,3 +12,18 @@ export const fetchNote = id => (
     url: `api/notes/${id}`
   })
 );
+
+export const updateNote = note => (
+  $.ajax({
+    method: 'PATCH',
+    url: `api/notes/${note.id}`,
+    data: { note}
+  })
+);
+
+export const deleteNote = id => (
+  $.ajax({
+    method: 'DELETE',
+    url: `api/notes/${id}`
+  })
+);

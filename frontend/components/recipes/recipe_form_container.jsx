@@ -7,7 +7,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  createRecipe: (recipe) => dispatch(createRecipe(recipe))
+  createRecipe: (recipe) => dispatch(createRecipe(recipe)),
 });
 
 export default connect(

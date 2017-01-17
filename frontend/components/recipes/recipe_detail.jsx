@@ -16,13 +16,13 @@ class RecipeDetail extends React.Component {
         <div className="recipe-ingredients">
           <h2>Ingredients:</h2>
           <ul className="ingredients">
-            { recipe.ingredients.map((ingredient) => <li>{ ingredient }</li>) }
+            { recipe.ingredients.map((ingredient, i) => <li key={i}>{ ingredient }</li>) }
           </ul>
         </div>
         <div className="recipe-directions">
           <h2>Directions:</h2>
           <ul className="directions">
-            { recipe.directions.map((direction) => <li>{ direction }</li>) }
+            { recipe.directions.map((direction, i) => <li key={i}>{ direction }</li>) }
           </ul>
         </div>
       </div>);
