@@ -1,0 +1,45 @@
+.recipe-form-container {
+  width: 500px;
+  margin: auto;
+  background-color: rgba(236, 241, 242, 0.7);
+  border-radius: 3px;
+  box-shadow: 0 0 5px black;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.recipe-form {
+  font-size: 20px;
+  text-align: left;
+  padding: 5px;
+
+  label {
+    border-bottom: 1px solid #272635;
+    padding-top: 10px;
+  }
+
+  input {
+    text-align: center;
+    width: 450px;
+    height: 30px;
+    line-height: 40px;
+    padding: 0px 6px;
+  }
+  .add-input-button {
+    font-family: 'Signika', sans-serif;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: #ffa513;
+    color: black;
+
+    &:hover {
+      background-color: #292F36;;
+    }
+  }
+
+  img {
+    width: 300px;
+    max-width: 100%;
+  }
+}

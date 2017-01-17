@@ -21,8 +21,7 @@ class NoteForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createNote(this.state);//.then((note) => this.props.router.push(`/profile/${this.props.recipeId}`)
-
+    this.props.createNote(this.state);
   }
 
   render() {

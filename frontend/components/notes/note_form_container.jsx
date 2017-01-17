@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { requestAllNotes, requestNote, createNote } from '../../actions/note_actions';
+import { createNote } from '../../actions/note_actions';
 import NoteForm from './note_form';
 
 const mapStateToProps = ( state, {params}) => ({

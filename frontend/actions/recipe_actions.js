@@ -12,8 +12,9 @@ export const requestAllRecipes = () => dispatch => (
 
 export const requestRecipe = id => dispatch => (
   RecipeApiUtil.fetchRecipe(id).then(res => {
-    dispatch(receiveAllNotes(res.notes));
-    return dispatch(receiveRecipe(res.recipe));
+    console.log(res);
+    // dispatch(receiveAllNotes(res.notes));
+    return dispatch(receiveRecipe(res));
   })
 );
 

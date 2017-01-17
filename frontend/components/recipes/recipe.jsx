@@ -8,12 +8,12 @@ class Recipe extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestRecipe(this.props.params.id);
+    console.log('here');
+    console.log(this.props);
+    if (!this.props.recipe) {
+      this.props.requestRecipe(this.props.recipeId);
+    }
   }
-  // 
-  // componentWillUpdate() {
-  //   this.props.requestRecipe(this.props.params.id);
-  // }
 
   render() {
     if (this.props.recipe) {
@@ -21,18 +21,24 @@ class Recipe extends React.Component {
 
       return (
         <div className="recipe-container">
-          <div className="recipe-header">
-            <img className="recipe-image" src={ image_url} />
-            <h1 className="recipe-title">{ title }</h1>
+          <div className="col-2-3">
+            <div className="recipe-header">
+              <img className="recipe-image" src={ image_url} />
+              <h1 className="recipe-title">{ title }</h1>
+            </div>
+            <div className="recipe-ingredients">
+              <h2>Ingredients</h2>
+            </div>
+            <div className="recipe-directions">
+              <h2>Directions</h2>
+            </div>
           </div>
-          <div className="recipe-ingredients">
-            <h2>Ingredients</h2>
+          <div className="notes">
+            <div className="col-1-3">
+              <NoteFormContainer recipeId={this.props.recipe.id}/>
+              <NotesIndexContainer />
+            </div>
           </div>
-          <div className="recipe-directions">
-            <h2>Directions</h2>
-          </div>
-        <NoteFormContainer recipeId={this.props.recipe.id}/>
-        <NotesIndexContainer />
         </div>
       );
     } else {

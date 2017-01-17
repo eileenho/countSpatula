@@ -1,18 +1,16 @@
 .recipe-index-container {
-  width: 900px;
   margin: auto;
-  background-color: #ffa513;
-
+  overflow: contain;
   img {
     max-width: 100%;
   }
 }
 
 .recipe-index-item {
-  float: left;
   position: relative;
   width: 280px;
-  margin: 5px;
+  padding: 5px;
+  display: inline-block;
 }
 
 .recipe-index-image {

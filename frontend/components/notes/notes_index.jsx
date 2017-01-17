@@ -7,10 +7,6 @@ class NotesIndex extends React.Component {
     super(props);
   }
 
-  // componentDidMount() {
-  //   this.props.requestAllNotes(this.props.notes.recipe_id);
-  // }
-
   render() {
     const notes = this.props.notes;
     if (notes) {

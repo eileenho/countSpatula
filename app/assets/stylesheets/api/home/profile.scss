@@ -1,6 +1,30 @@
 .profile {
   margin: auto;
-  margin-top: 50px;
   font-family: 'Signika', sans-serif;
   font-size: 28px;
+  background-image: url('http://res.cloudinary.com/di8mt9hbc/image/upload/v1484542663/wood-911002_1920_phredk.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+}
+
+.profile-heading {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.show-recipe-form-button {
+  font-family: 'Signika', sans-serif;
+  font-size: 24px;
+  padding: 5px 25px;
+  border-radius: 4px;
+  background-color: #A4250D;
+  color: white;
+
+  &:hover {
+    background-color: #292F36;;
+  }
 }

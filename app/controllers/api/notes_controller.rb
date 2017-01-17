@@ -6,10 +6,6 @@ class Api::NotesController < ApplicationController
     @note = Note.new(note_params)
 
     if @note.save
-
-      # @recipe = @note.recipe
-      # @notes = @recipe.notes
-
       render :show
     else
       render json: @note.errors.full_messages, status: 422
