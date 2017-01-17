@@ -15,11 +15,13 @@ class Recipe extends React.Component {
     if (recipe) {
       return (
         <div className="show-recipe-container">
-          <div className="recipe">
-            <RecipeDetail recipe={recipe} />
+          <div className="col-2-3">
+            <div className="recipe">
+              <RecipeDetail recipe={recipe} />
+            </div>
           </div>
-          <div className="notes">
-            <div className="col-1-3">
+          <div className="col-1-3">
+            <div className="notes">
               <NoteFormContainer recipeId={this.props.recipe.id}/>
               <NotesIndexContainer />
             </div>
