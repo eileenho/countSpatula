@@ -12,8 +12,6 @@ export const requestAllRecipes = () => dispatch => (
 
 export const requestRecipe = id => dispatch => (
   RecipeApiUtil.fetchRecipe(id).then(res => {
-    console.log(res);
-    // dispatch(receiveAllNotes(res.notes));
     return dispatch(receiveRecipe(res));
   })
 );
