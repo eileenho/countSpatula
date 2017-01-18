@@ -4,7 +4,6 @@ import { withRouter } from 'react-router';
 class NotesIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.notes;
     this.defaultImage = this.defaultImage.bind(this);
   }
 
@@ -17,16 +16,16 @@ class NotesIndexItem extends React.Component {
   }
 
   render() {
-    const { note, cooked_date } = this.props.note;
-
+    const { note } = this.props;
+    
     return (
       <div className="notes-index-item">
         <div className="notes-index-image">
           { this.defaultImage() }
         </div>
         <div className="notes-index-note">
-          <h1>Date: { cooked_date }</h1>
-          <p>Note: { note }</p>
+          <h1>Date: { note.cooked_date }</h1>
+          <p>Note: { note.note }</p>
         </div>
       </div>
     );

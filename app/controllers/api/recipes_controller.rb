@@ -48,6 +48,6 @@ class Api::RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :one_liner, :image_url, :user_id, ingredients: [], directions: [])
+    params.require(:recipe).permit(:title, :one_liner, :image_url, :user_id, :all_tags, ingredients: [], directions: [])
   end
 end

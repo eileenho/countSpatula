@@ -66,8 +66,7 @@ class NoteForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createNote(this.state);
-
+    this.props.createNote(this.state); //.then(this.props.requestRecipe(this.props.recipeId));
   }
 
   render() {

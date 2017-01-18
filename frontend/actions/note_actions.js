@@ -6,7 +6,10 @@ export const REMOVE_NOTE = "REMOVE_NOTE";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
 export const requestNotes = id => dispatch => (
-  NoteApiUtil.fetchNotes(id).then(notes => dispatch(receiveAllNotes(notes)))
+  NoteApiUtil.fetchNotes(id).then(notes => {
+    debugger;
+    return dispatch(receiveAllNotes(notes)) }
+  )
 );
 
 export const requestNote = id => dispatch => (

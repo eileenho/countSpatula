@@ -22,6 +22,13 @@ class Recipe extends React.Component {
     this.props.requestRecipe(this.props.recipeId);
   }
 
+  // componentWillReceiveProps(nextProps) {
+  //
+  //   if (this.props.recipe.notes !== nextProps.recipe.notes) {
+  //     this.props.requestRecipe(this.props.recipeId);
+  //   }
+  // }
+
   onClick(e) {
     e.preventDefault();
     this.setState({ showEditRecipeForm: !this.state.showEditRecipeForm });
@@ -63,7 +70,7 @@ class Recipe extends React.Component {
             </div>
             <div className="notes">
               <NoteFormContainer recipeId={this.props.recipe.id}/>
-              <NotesIndexContainer recipe={this.props.recipe} notes={this.props.recipe.notes}/>
+              <NotesIndexContainer recipe={this.props.recipe} />
             </div>
           </div>
         </div>

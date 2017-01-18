@@ -13,7 +13,8 @@ class Api::NotesController < ApplicationController
   end
 
   def index
-    @notes = Note.find_by(recipe_id: params[:id])
+    @notes = Note.where(recipe_id: params[:recipeId])
+    render :index
   end
 
   def show
