@@ -13,11 +13,19 @@ export const fetchNote = id => (
   })
 );
 
+export const fetchNotes = recipeId => (
+  $.ajax({
+    method: 'GET',
+    url: '/api/notes',
+    data: { recipeId }
+  })
+);
+
 export const updateNote = note => (
   $.ajax({
     method: 'PATCH',
     url: `api/notes/${note.id}`,
-    data: { note}
+    data: { note }
   })
 );
 

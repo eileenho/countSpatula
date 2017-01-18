@@ -12,6 +12,10 @@ class Api::NotesController < ApplicationController
     end
   end
 
+  def index
+    @notes = Note.find_by(recipe_id: params[:id])
+  end
+
   def show
     @note = Note.find(params[:id])
     render :show
@@ -22,8 +26,10 @@ class Api::NotesController < ApplicationController
   end
 
   def update
+    @note = Note.find(params[:id])
     if @note.update(note_params)
-      render :show
+      recipe = @note.recipe
+      render json: recipe, include: [:notes]
     else
       render json: @note.errors.full_messages, status: 422
     end

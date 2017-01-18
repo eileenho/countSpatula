@@ -7,8 +7,18 @@ class NotesIndex extends React.Component {
     super(props);
   }
 
+  // componentDidMount() {
+  //   this.props.requestNotes(this.props.recipe.id).then( () => (
+  //     this.setState({
+  //       notes: this.props.notes
+  //     })
+  //   ));
+  // }
+
   render() {
-    const notes = this.props.notes;
+    console.log(this.props.notes);
+    console.log(this.props.recipe);
+    const { notes } = this.props.recipe;
     if (notes) {
       return (
         <div className="notes-index-container">

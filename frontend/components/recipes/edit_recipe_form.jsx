@@ -5,8 +5,8 @@ import { withRouter } from 'react-router';
 class EditRecipeForm extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = this.props.recipe;
+    this.toggleVisible = this.props.toggleVisible;
 
     this.addIngredient = this.addIngredient.bind(this);
     this.editIngredient = this.editIngredient.bind(this);
@@ -145,6 +145,7 @@ class EditRecipeForm extends React.Component {
       ingredients: this.state.ingredients,
       directions: this.state.directions,
     });
+    this.toggleVisible();
   }
 
   render () {
@@ -153,6 +154,11 @@ class EditRecipeForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="recipe-form-box">
           <h1>Edit Recipe</h1>
           <div className="recipe-form">
+            <label className="recipe-form-label">Image:
+              <div className="image-form">
+                {this.handleImageSubmit()}
+              </div>
+            </label><br/>
             <label>Title: <br />
               <input type="text"
                      value={this.props.recipe.title}
@@ -181,11 +187,6 @@ class EditRecipeForm extends React.Component {
             </label>
             <button className="add-input-button"
                     onClick={this.addDirection}>Add Direction</button><br />
-            <label className="recipe-form-label">Image:
-              <div className="image-form">
-                {this.handleImageSubmit()}
-              </div>
-            </label><br/>
 
           <input type='submit' value='Update Recipe'></input>
           </div>

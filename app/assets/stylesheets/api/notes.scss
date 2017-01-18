@@ -3,5 +3,36 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .notes {
-  flex: 1 0 0;
+  // flex: 1 0 0;
+  min-width: 33%;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  flex-direction: column;
+  padding: 10px;
+
+  img {
+    width: 150px;
+    max-width: 100%;
+  }
+}
+
+.notes-index-item {
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: center;
+
+  img {
+    width: 100px;
+    max-width: 100%;
+  }
+
+  .notes-index-note {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    padding: 10px;
+
+  }
 }

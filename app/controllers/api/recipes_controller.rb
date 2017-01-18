@@ -23,6 +23,7 @@ class Api::RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @notes = @recipe.notes
   end
 
   def edit
