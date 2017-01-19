@@ -13,7 +13,7 @@ class Api::RecipesController < ApplicationController
   end
 
   def index
-    @recipes = current_user.recipes
+    @recipes = current_user.recipes.order('created_at DESC')
     if @recipes
       render :index
     else

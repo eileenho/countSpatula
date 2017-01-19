@@ -126,14 +126,14 @@ class RecipeForm extends React.Component {
       if(this.state.image_url === ""){
         return(
           <div>
-            <button onClick={this.cloudinate}>Add Image</button>
+            <button onClick={this.cloudinate} className="image-button">Add Image</button>
           </div>
         );
       } else {
         return(
           <div>
             <img src={this.state.image_url}/>
-            <button onClick={this.removeImage}>Replace Image</button>
+            <button onClick={this.removeImage} className="image-button">Replace Image</button>
           </div>
         );
       }
@@ -164,7 +164,7 @@ class RecipeForm extends React.Component {
                      className="recipe-form-input" />
             </label><br />
 
-            <label>Ingredients <br />
+          <label>Ingredients: <br />
                 <div className="ingredients">
                   {this.showIngredient()}
                 </div>
@@ -172,7 +172,7 @@ class RecipeForm extends React.Component {
             <button className="add-input-button"
                     onClick={this.addIngredient}>Add Ingredient</button><br />
 
-                  <label>Directions <br />
+                  <label>Directions: <br />
                 <div className="directions">
                   {this.showDirection()}
                 </div>
@@ -185,7 +185,7 @@ class RecipeForm extends React.Component {
               </div>
             </label><br/>
 
-          <input type='submit' value='Add Recipe'></input>
+          <input type='submit' value='Add Recipe' className="add-input-button"></input>
           </div>
         </form>
       </div>

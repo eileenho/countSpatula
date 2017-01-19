@@ -5,26 +5,35 @@
   border-radius: 3px;
   box-shadow: 0 0 5px black;
   padding: 10px;
-  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
 }
 
 .recipe-form {
   font-size: 20px;
   text-align: left;
-  padding: 5px;
+  padding: 10px;
 
   label {
-    border-bottom: 1px solid #272635;
-    padding-top: 10px;
+    padding: 10px;
   }
 
   input {
-    text-align: center;
     width: 450px;
-    height: 30px;
-    line-height: 40px;
+    height: 25px;
     padding: 0px 6px;
   }
+
+  // input:focus {
+  //   border: 1px solid #ffa513
+  // }
+
   .add-input-button {
     font-family: 'Signika', sans-serif;
     font-size: 16px;
@@ -32,6 +41,7 @@
     border-radius: 4px;
     background-color: #ffa513;
     color: black;
+    width: 200px;
 
     &:hover {
       background-color: #292F36;
@@ -42,5 +52,20 @@
   img {
     width: 300px;
     max-width: 100%;
+  }
+
+  .image-button {
+    font-family: 'Signika', sans-serif;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: #ffa513;
+    color: black;
+    width: 200px;
+
+    &:hover {
+      background-color: #292F36;
+      color: white;
+    }
   }
 }
