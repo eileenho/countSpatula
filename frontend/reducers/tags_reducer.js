@@ -7,7 +7,7 @@ const TagsReducer = (state = {}, action) => {
   let newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_TAGS:
-      return merge({}, state, action.tags);
+      return action.tags;
     case RECEIVE_TAG:
       return merge(newState, {[action.tag.id]: action.tag});
     case REMOVE_TAG:

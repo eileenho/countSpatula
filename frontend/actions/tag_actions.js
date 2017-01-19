@@ -29,6 +29,10 @@ export const deleteTagging = (tag, recipeId) => dispatch => (
   TagApiUtil.deleteTagging(tag, recipeId).then(deletedTagging => dispatch(removeTagging(deletedTagging)))
 );
 
+export const searchTags = query => dispatch => (
+  TagApiUtil.searchTags(query).then(tags => dispatch(receiveTags(tags)))
+);
+
 export const receiveTags = tags => ({
   type: RECEIVE_TAGS,
   tags

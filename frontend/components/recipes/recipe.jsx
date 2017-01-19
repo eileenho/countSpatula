@@ -51,15 +51,19 @@ class Recipe extends React.Component {
     if (recipe) {
       return (
         <div className="show-recipe-container">
-          <div className="recipe-tags-container">
-            <RecipeTagsContainer recipeId={this.props.recipe.id} />
-          </div>
-          <div className="recipe-edit-form">
-            <div className="recipe-options">
-              <button onClick={ this.onClick } className="show-recipe-form-button">{ this.buttonText() }</button>
-              <button onClick={ this.deleteRecipe.bind(this) }>Delete Recipe</button>
+          <div className="recipe-nav-bar-container">
+            <div className="recipe-nav-bar">
+              <div className="recipe-tags-container">
+                <RecipeTagsContainer recipeId={this.props.recipe.id} />
+              </div>
+              <div className="recipe-options">
+                <button onClick={ this.onClick }>{ this.buttonText() }</button>
+                <button onClick={ this.deleteRecipe.bind(this) }>Delete Recipe</button>
+              </div>
             </div>
-            { this.state.showEditRecipeForm && <EditRecipeFormContainer { ...this.props } toggleVisible={this.toggleVisible} /> }
+            <div className="recipe-edit-form">
+              { this.state.showEditRecipeForm && <EditRecipeFormContainer { ...this.props } toggleVisible={this.toggleVisible} /> }
+            </div>
           </div>
           <div className="large-recipe-container">
             <div className="recipe">

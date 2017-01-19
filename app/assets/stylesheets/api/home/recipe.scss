@@ -12,11 +12,40 @@
   flex-direction: column;
 }
 
-.recipe-edit-form {
-  width: 100%;
+.recipe-nav-bar-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+
+  .recipe-nav-bar {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    
+
+    .recipe-options button {
+      font-family: 'Signika', sans-serif;
+      font-size: 16px;
+      padding: 5px;
+      border-radius: 4px;
+      background-color: #FFA513;
+      color: black;
+
+      &:hover {
+        background-color: #0D2645;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .recipe-edit-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }
+
+
 
 .large-recipe-container {
   width: 100%;

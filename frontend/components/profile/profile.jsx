@@ -1,6 +1,7 @@
 import React from 'react';
 import RecipesIndexContainer from '../recipes/recipes_index_container';
 import RecipeFormContainer from '../recipes/recipe_form_container';
+import TagsSearchContainer from '../tags/tags_search_container';
 
 class Profile extends React.Component {
   constructor() {
@@ -28,6 +29,9 @@ class Profile extends React.Component {
   render () {
     return (
       <div className="profile">
+        <div className="tags-search-container">
+          <TagsSearchContainer /><br />
+        </div>
         <div className="profile-heading">
           <button onClick={ this.onClick } className="show-recipe-form-button">{ this.buttonText() }</button>
         </div>

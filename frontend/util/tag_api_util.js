@@ -41,3 +41,11 @@ export const deleteTagging = (tag, recipeId) => (
     data: { tag: {id: `tag.id`, recipe_id: recipeId}}
   })
 );
+
+export const searchTags = query => (
+  $.ajax({
+    method: 'GET',
+    url: '/api/tags/search',
+    data: { query }
+  })
+);

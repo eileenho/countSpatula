@@ -8,7 +8,7 @@ class Api::TagsController < ApplicationController
   end
 
   def create
-    
+
     @tag = Tag.find_or_create_by(name: tag_params[:name])
     @tagging = Tagging.find_or_create_by(recipe_id: tag_params[:recipe_id], tag_id: @tag.id)
     render json: @tag
@@ -33,6 +33,15 @@ class Api::TagsController < ApplicationController
     else
       render json: @tagging.errors.full_messages, status: 422
     end
+  end
+
+  def search
+    if params[:query]
+      @tags = Tag.all.where("LOWER(name) ~ LOWER(?)", params[:query]).limit(5)
+    else
+      @tags = Tag.none
+    end
+    render :search
   end
 
   private

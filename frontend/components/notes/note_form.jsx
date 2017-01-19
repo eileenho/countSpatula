@@ -66,7 +66,13 @@ class NoteForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createNote(this.state);
+    this.props.createNote(this.state).then( () => (
+      this.setState({
+        image_url: "",
+        note: "",
+        cooked_date: "",
+      })
+    ));
   }
 
   render() {
