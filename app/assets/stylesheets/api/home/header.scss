@@ -4,20 +4,14 @@
   height: 75px;
   position: relative;
   font-family: 'Siginika' sans-serif;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row nowrap;
 
   .nav-logo {
-    display: inline-flex;
-    align-items: center;
-    float: left;
+    width: 225px;
     padding: 20px 10px;
-
-    div {
-      height: 75px;
-      width: 225px;
-      background-image: image-url('logo2.jpg');
-      background-size: cover;
-      border: 3px solid #292F36;
-    }
+    display: flex;
 
     a {
       font-size: 28px;
@@ -25,30 +19,31 @@
       font-weight: 600;
       color: #A4250D;
       text-decoration: none;
+      cursor: pointer;
     }
   }
 
   .nav-menu {
-    display: inline-flex;
-    float: right;
-    padding-top: 20px;
+    padding-top: 25px;
     padding-right: 50px;
-    list-style: none;
+
+    ul {
+      display: flex;
+      flex-direction: row nowrap;
+      list-style: none;
+      align-items: baseline;
+    }
 
     li a {
       font-size: 20px;
       padding-right: 40px;
       color: #272635;
       text-decoration: none;
+      cursor: pointer;
 
       &:hover {
         color: #FFA513;
       }
-    }
-
-    h1 {
-      font-size: 16px;
-      padding-right: 20px;
     }
 
     button {

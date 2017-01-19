@@ -27,14 +27,14 @@ class Header extends React.Component {
     let navMenu;
     if (this.props.currentUser) {
       navMenu = (
-        <ul className="nav-menu">
+        <ul>
           <li><Link to="/profile">{ this.userLink() }</Link></li>
           <li><button onClick={ this.handleLogout }>Logout</button></li>
         </ul>
       );
     } else {
       navMenu = (
-        <ul className="nav-menu">
+        <ul>
           <li><Link to="/login">Log In</Link></li>
           <li><Link to="/signup">Sign Up</Link></li>
           <li><button onClick={ this.loginGuest }>Demo</button></li>
@@ -44,12 +44,12 @@ class Header extends React.Component {
 
     return (
       <div className="header">
-        <nav className="nav-logo">
+        <div className="nav-logo">
           <Link to="/">spatula</Link>
-        </nav>
-        <nav>
+        </div>
+        <div className="nav-menu">
           { navMenu }
-        </nav>
+        </div>
       </div>
     );
   }

@@ -57,7 +57,7 @@ class NoteForm extends React.Component {
       } else {
         return(
           <div>
-            <img src={this.state.image_url}/>
+            <img src={this.state.image_url}/><br />
             <button onClick={this.removeImage}>Replace Image</button>
           </div>
         );
@@ -73,7 +73,7 @@ class NoteForm extends React.Component {
     return (
       <div className="note-form-container">
         <form onSubmit={ this.handleSubmit } className="note-form-box">
-          <h1>Add note</h1>
+          <h1>Add note</h1><br />
           <div className="note-form">
             <label>Date cooked: <br />
               <input type="date"
@@ -87,7 +87,7 @@ class NoteForm extends React.Component {
                      onChange={ this.update("note") }
                      className="note-form-note" />
             </label><br />
-            <label className="recipe-form-label">Image:
+          <label>Image:
               <div className="image-form">
                 { this.handleImageSubmit() }
               </div>

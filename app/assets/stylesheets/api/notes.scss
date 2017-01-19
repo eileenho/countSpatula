@@ -3,12 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .notes {
-  // flex: 1 0 0;
   min-width: 33%;
   display: flex;
   justify-content: center;
-  vertical-align: middle;
   flex-direction: column;
+  align-content: flex-start;
   padding: 10px;
 
   img {
