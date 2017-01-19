@@ -4,7 +4,6 @@ import { RECEIVE_ALL_NOTES, RECEIVE_NOTE, REMOVE_NOTE } from '../actions/note_ac
 
 const NotesReducer = (state = {}, action) => {
   Object.freeze(state);
-  debugger
   let newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_ALL_NOTES:

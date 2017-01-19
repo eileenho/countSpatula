@@ -8,21 +8,30 @@ class Api::TagsController < ApplicationController
   end
 
   def create
-    @tag = Tag.find_or_create_by(name: params[:name])
-    if @tag.save!
-      render :show
-    else
-      render json: @tag.errors.full_messages, status: 422
-    end
+    
+    @tag = Tag.find_or_create_by(name: tag_params[:name])
+    @tagging = Tagging.find_or_create_by(recipe_id: tag_params[:recipe_id], tag_id: @tag.id)
+    render json: @tag
   end
 
   def destroy
     @tag = Tag.find(params[:id])
     if @tag
       @tag.destroy
-      render json: @tag
+      render json: {}
     else
       render json: @tag.errors.full_messages, status: 422
+    end
+  end
+
+  def destroyTagging
+    @tag = Tag.find(params[:id])
+    @tagging = @tag.taggings.select{ |tagging| tagging.recipe_id == tag_params[:recipe_id].to_i }.first
+    if @tagging
+      @tagging.destroy
+      render json: @tagging
+    else
+      render json: @tagging.errors.full_messages, status: 422
     end
   end
 

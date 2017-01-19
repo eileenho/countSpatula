@@ -8,4 +8,6 @@ Rails.application.routes.draw do
     resources :notes
     resources :tags, only: [:index, :show, :create, :destroy]
   end
+  get 'api/recipes/:id/tags', to: 'api/recipes#tags'
+  delete 'api/tagging/:id', to: 'api/tags#destroyTagging'
 end

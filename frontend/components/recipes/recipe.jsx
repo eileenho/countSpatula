@@ -5,6 +5,7 @@ import EditRecipeFormContainer from './edit_recipe_form_container';
 import RecipeDetail from './recipe_detail';
 import NoteFormContainer from '../notes/note_form_container';
 import NotesIndexContainer from '../notes/notes_index_container';
+import RecipeTagsContainer from '../tags/recipe_tags_container';
 
 class Recipe extends React.Component {
   constructor() {
@@ -20,14 +21,8 @@ class Recipe extends React.Component {
 
   componentDidMount() {
     this.props.requestRecipe(this.props.recipeId);
+    this.props.requestRecipeTags(this.props.recipeId);
   }
-
-  // componentWillReceiveProps(nextProps) {
-  //
-  //   if (this.props.recipe.notes !== nextProps.recipe.notes) {
-  //     this.props.requestRecipe(this.props.recipeId);
-  //   }
-  // }
 
   onClick(e) {
     e.preventDefault();
@@ -53,10 +48,12 @@ class Recipe extends React.Component {
 
   render() {
     const { recipe } = this.props;
-
     if (recipe) {
       return (
         <div className="show-recipe-container">
+          <div className="recipe-tags-container">
+            <RecipeTagsContainer recipeId={this.props.recipe.id} />
+          </div>
           <div className="recipe-edit-form">
             <div className="recipe-options">
               <button onClick={ this.onClick } className="show-recipe-form-button">{ this.buttonText() }</button>

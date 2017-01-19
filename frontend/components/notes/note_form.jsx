@@ -66,30 +66,30 @@ class NoteForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createNote(this.state); //.then(this.props.requestRecipe(this.props.recipeId));
+    this.props.createNote(this.state);
   }
 
   render() {
     return (
       <div className="note-form-container">
-        <form onSubmit={this.handleSubmit} className="note-form-box">
+        <form onSubmit={ this.handleSubmit } className="note-form-box">
           <h1>Add note</h1>
           <div className="note-form">
             <label>Date cooked: <br />
               <input type="date"
-                     value={this.state.cooked_date}
-                     onChange={this.update("cooked_date")}
+                     value={ this.state.cooked_date }
+                     onChange={ this.update("cooked_date") }
                      className="note-form-date" />
             </label><br />
             <label>Note: <br />
               <input type="text"
-                     value={this.state.note}
-                     onChange={this.update("note")}
+                     value={ this.state.note }
+                     onChange={ this.update("note") }
                      className="note-form-note" />
             </label><br />
             <label className="recipe-form-label">Image:
               <div className="image-form">
-                {this.handleImageSubmit()}
+                { this.handleImageSubmit() }
               </div>
             </label><br/>
           <input type='submit' value='Add Note'></input>

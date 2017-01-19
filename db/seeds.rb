@@ -24,3 +24,11 @@ recipe2 = Recipe.create(title: "Garlic Fries", image_url: "http://res.cloudinary
 recipe3 = Recipe.create(title: "Spaghetti", image_url: "http://res.cloudinary.com/di8mt9hbc/image/upload/v1484368330/food-dinner-pasta-spaghetti-8500_gphtz9.jpg", one_liner: "spaghetti with a red meat sauce", user_id: 1)
 recipe4 = Recipe.create(title: "Roasted Salmon", image_url: "http://res.cloudinary.com/di8mt9hbc/image/upload/v1484368292/salmon-dish-food-meal-46239_n9vwwb.jpg", one_liner: "crusted with lemon pepper", user_id: 1)
 recipe5 = Recipe.create(title: "Pomegranate Chicken Salad", image_url: "http://res.cloudinary.com/di8mt9hbc/image/upload/v1484368259/food-salad-healthy-lunch_j2vfrm.jpg", one_liner: "a light, diet-friendly meal", user_id: 1)
+
+tag1 = Tag.create(name: "Healthy")
+tag2 = Tag.create(name: "Seafood")
+
+tagging1 = Tagging.create(recipe_id: 1, tag_id: 1)
+tagging2 = Tagging.create(recipe_id: 2, tag_id: 1)
+tagging3 = Tagging.create(recipe_id: 3, tag_id: 2)
+tagging4 = Tagging.create(recipe_id: 1, tag_id: 2)

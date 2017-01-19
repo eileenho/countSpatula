@@ -7,7 +7,6 @@ export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
 export const requestNotes = id => dispatch => (
   NoteApiUtil.fetchNotes(id).then(notes => {
-    debugger;
     return dispatch(receiveAllNotes(notes)) }
   )
 );

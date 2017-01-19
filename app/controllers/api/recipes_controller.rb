@@ -45,9 +45,19 @@ class Api::RecipesController < ApplicationController
     render :show
   end
 
+  def tags
+    @recipe = Recipe.find(params[:id])
+    if @recipe
+      @tags = @recipe.tags
+      render json: @tags
+    else
+      render json: @recipe.errors.full_messages, status: 422
+    end
+  end
+
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :one_liner, :image_url, :user_id, :all_tags, ingredients: [], directions: [])
+    params.require(:recipe).permit(:title, :one_liner, :image_url, :user_id, tag_names: [], ingredients: [], directions: [])
   end
 end
