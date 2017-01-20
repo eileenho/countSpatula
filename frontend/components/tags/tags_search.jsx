@@ -49,7 +49,7 @@ class TagsSearch extends React.Component {
     if (tags) {
       return (
         <ul>
-          { tags.map((tag, i) => <li key={i}><button onClick={this.fetchRecipes(tag.id)}>{tag.name}</button></li>) }
+          { tags.map((tag, i) => <li key={i}><button className="search-result-tag" onClick={this.fetchRecipes(tag.id)}>{tag.name}</button></li>) }
         </ul>
       );
     }
@@ -60,7 +60,9 @@ class TagsSearch extends React.Component {
       <div className="tags-search-form">
         <input onChange={this.updateInputVal}
                onClick={this.updateTagName}
-               value={this.state.inputVal} />
+               value={this.state.inputVal}
+               placeholder="Search recipes by tags..."
+                className="tags-search-input" />
            { this.renderResults(this.state.tags) }
      </div>
 

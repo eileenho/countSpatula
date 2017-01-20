@@ -2,18 +2,18 @@
 .tag-search-form {
   display: flex;
   flex-flow: nowrap;
+}
 
+.search-result-tag {
+  font-size: 16px;
+}
 
-  .tags-search-form-input {
-    background: white;
-    border: 1px solid #c3c2c2;
-    border-radius: 5px;
-    font-size: 16px;
-    height: 60px;
-  }
-
-  ul {
-    display: flex;
-    flex-direction: row;
-  }
+.tags-search-input {
+  background: white;
+  border: 1px solid #c3c2c2;
+  border-radius: 5px;
+  font-size: 16px;
+  height: 30px;
+  margin: 10px;
+  min-width: 200px;
 }

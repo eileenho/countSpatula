@@ -23,6 +23,8 @@
   color: $dark-gray;
   font-family: 'Raleway', sans-serif;
   background-color: white;
+  max-height: 30px;
+  margin: 10px;
 
   &:hover {
     background-color: $red;
