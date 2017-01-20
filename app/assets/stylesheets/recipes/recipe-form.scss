@@ -1,4 +1,4 @@
-.recipe-form-container {
+.recipe-form-box {
   width: 500px;
   margin: auto;
   background-color: rgba(236, 241, 242, 0.7);
@@ -13,15 +13,8 @@
     text-align: center;
   }
 
-}
-
-.recipe-form {
-  font-size: 20px;
-  text-align: left;
-  padding: 10px;
-
   label {
-    padding: 10px;
+    border-bottom: 1px solid $blue;
   }
 
   input {
@@ -35,13 +28,9 @@
   // }
 
   .add-input-button {
-    font-family: 'Signika', sans-serif;
     font-size: 16px;
     padding: 5px;
     border-radius: 4px;
-    background-color: #ffa513;
-    color: black;
-    width: 200px;
 
     &:hover {
       background-color: #292F36;

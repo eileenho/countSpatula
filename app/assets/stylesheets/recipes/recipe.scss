@@ -1,0 +1,115 @@
+.show-recipe-container {
+  margin: auto;
+  font-family: 'Signika', sans-serif;
+  font-size: 28px;
+  background-image: url('http://res.cloudinary.com/di8mt9hbc/image/upload/v1484542663/wood-911002_1920_phredk.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-nav-bar {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+
+}
+
+.recipe-options-button {
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid $gray;
+  background-color: rgba(236, 241, 242, 0.8);
+  // background-color: $light-blue;
+  color: $gray;
+  margin: 10px;
+
+  &:hover {
+    // background-color: #0D2645;
+    color: black;
+    font-weight: bold;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+}
+
+.recipe-edit-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.large-recipe-container {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+}
+
+.notes {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: flex-start;
+  padding: 10px;
+}
+
+
+.recipe-container {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 66%;
+  box-shadow: 0 0 5px black;
+}
+
+.recipe-header {
+  margin: auto;
+  img {
+    width: 100%;
+  }
+
+  .recipe-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 28px;
+    padding: 5px;
+    border-bottom: 2px solid $red;
+
+  }
+}
+
+.recipe-ingredients {
+  padding: 15px;
+
+  h2 {
+    font-size: 20px;
+    padding: 5px;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .ingredients {
+    font-size: 16px;
+    list-style: circle;
+  }
+}
+
+.recipe-directions {
+  padding: 15px;
+
+  h2 {
+    font-size: 20px;
+    padding: 5px;
+  }
+
+  .directions {
+    font-size: 14px;
+    list-style-type: decimal;
+  }
+}

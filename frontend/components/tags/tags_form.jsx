@@ -28,15 +28,13 @@ class TagsForm extends React.Component {
 
   render() {
     return (
-      <div className="tag-form-container">
-        <form onSubmit={ this.handleSubmit } className="tag-form">
-          <input type="text"
-                 value={ this.state.name }
-                 onChange={ this.update("name") }
-                 required />
-               <input type="submit" value="Add Tag"></input>
-        </form>
-      </div>
+      <form onSubmit={ this.handleSubmit } className="tag-form">
+        <input type="text"
+               value={ this.state.name }
+               onChange={ this.update("name") }
+               required />
+             <input type="submit" value="Add Tag"></input>
+      </form>
     );
   }
 }

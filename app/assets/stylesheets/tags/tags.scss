@@ -8,6 +8,7 @@
   background-color: white;
   margin: auto;
   padding: 5px;
+  max-width: 66%;
 
   .tags-list {
     display: flex;
@@ -27,11 +28,5 @@
       }
     }
 
-  }
-
-  .tag-form-container {
-    input {
-
-    }
   }
 }

@@ -5,7 +5,6 @@ import EditRecipeFormContainer from './edit_recipe_form_container';
 import RecipeDetail from './recipe_detail';
 import NoteFormContainer from '../notes/note_form_container';
 import NotesIndexContainer from '../notes/notes_index_container';
-import RecipeTagsContainer from '../tags/recipe_tags_container';
 
 class Recipe extends React.Component {
   constructor() {
@@ -42,8 +41,11 @@ class Recipe extends React.Component {
   }
 
   deleteRecipe() {
-    this.props.deleteRecipe(this.props.recipeId);
-    hashHistory.replace('/profile');
+   const deleteConfirm = confirm("Delete this recipe?");
+    if (deleteConfirm === true) {
+      this.props.deleteRecipe(this.props.recipeId);
+      hashHistory.replace('/profile');
+    }
   }
 
   render() {
@@ -51,24 +53,17 @@ class Recipe extends React.Component {
     if (recipe) {
       return (
         <div className="show-recipe-container">
-          <div className="recipe-nav-bar-container">
-            <div className="recipe-nav-bar">
-              <div className="recipe-tags-container">
-                <RecipeTagsContainer recipeId={this.props.recipe.id} />
+          <div className="recipe-nav-bar">
+            <div className="recipe-options">
+              <button className="recipe-options-button" onClick={ this.onClick }>{ this.buttonText() }</button>
+              <button className="recipe-options-button" onClick={ this.deleteRecipe.bind(this) }>Delete Recipe</button>
+              <div className="recipe-edit-form">
+                { this.state.showEditRecipeForm && <EditRecipeFormContainer { ...this.props } toggleVisible={this.toggleVisible} /> }
               </div>
-              <div className="recipe-options">
-                <button onClick={ this.onClick }>{ this.buttonText() }</button>
-                <button onClick={ this.deleteRecipe.bind(this) }>Delete Recipe</button>
-              </div>
-            </div>
-            <div className="recipe-edit-form">
-              { this.state.showEditRecipeForm && <EditRecipeFormContainer { ...this.props } toggleVisible={this.toggleVisible} /> }
             </div>
           </div>
           <div className="large-recipe-container">
-            <div className="recipe">
-              <RecipeDetail recipe={recipe} />
-            </div>
+            <RecipeDetail recipe={recipe} />
             <div className="notes">
               <NoteFormContainer recipeId={this.props.recipe.id}/>
               <NotesIndexContainer recipe={this.props.recipe} />
@@ -81,5 +76,7 @@ class Recipe extends React.Component {
     }
   }
 }
+
+
 
 export default withRouter(Recipe);

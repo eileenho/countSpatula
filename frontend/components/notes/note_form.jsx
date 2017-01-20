@@ -77,31 +77,27 @@ class NoteForm extends React.Component {
 
   render() {
     return (
-      <div className="note-form-container">
-        <form onSubmit={ this.handleSubmit } className="note-form-box">
-          <h1>Add note</h1><br />
-          <div className="note-form">
-            <label>Date cooked: <br />
-              <input type="date"
-                     value={ this.state.cooked_date }
-                     onChange={ this.update("cooked_date") }
-                     className="note-form-date" />
-            </label><br />
-            <label>Note: <br />
-              <input type="text"
-                     value={ this.state.note }
-                     onChange={ this.update("note") }
-                     className="note-form-note" />
-            </label><br />
-          <label>Image:
-              <div className="image-form">
-                { this.handleImageSubmit() }
-              </div>
-            </label><br/>
-          <input type='submit' value='Add Note'></input>
-          </div>
-        </form>
-      </div>
+      <form onSubmit={ this.handleSubmit } className="note-form">
+        <h1>Add note</h1><br />
+        <label>Date cooked: <br />
+          <input type="date"
+                 value={ this.state.cooked_date }
+                 onChange={ this.update("cooked_date") }
+                 className="note-form-date" />
+        </label><br />
+        <label>Note: <br />
+          <input type="text"
+                 value={ this.state.note }
+                 onChange={ this.update("note") }
+                 className="note-form-note" />
+        </label><br />
+        <label>Image:
+            <div className="image-form">
+              { this.handleImageSubmit() }
+            </div>
+          </label><br/>
+        <input type='submit' value='Add Note'></input>
+      </form>
     );
   }
 }

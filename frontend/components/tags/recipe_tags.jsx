@@ -41,9 +41,7 @@ class RecipeTags extends React.Component {
         <ul className="tags-list">
           { this.showTags() }
         </ul>
-        <div className="tag-form-container">
-          <TagsFormContainer recipeId={this.props.recipeId}/>
-        </div>
+        <TagsFormContainer recipeId={this.props.recipeId}/>
       </div>
     );
   }

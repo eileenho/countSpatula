@@ -1,4 +1,6 @@
 import React from 'react';
+import RecipeTagsContainer from '../tags/recipe_tags_container';
+
 
 class RecipeDetail extends React.Component {
   constructor(props) {
@@ -13,6 +15,7 @@ class RecipeDetail extends React.Component {
           <img className="recipe-image" src={ recipe.image_url} />
           <h1 className="recipe-title">{ recipe.title }</h1>
         </div>
+        <RecipeTagsContainer recipeId={this.props.recipe.id} />
         <div className="recipe-ingredients">
           <h2>Ingredients:</h2>
           <ul className="ingredients">

@@ -18,17 +18,19 @@ class Header extends React.Component {
     this.props.logout().then(() => this.props.router.push('/'));
   }
 
-  userLink() {
-    let user = `${this.props.currentUser.username}'s Recipes`;
-    return user;
-  }
+  // let user = `${this.props.currentUser.username}'s Recipes`;
+  // return user;
+  // 
+  // userLink() {
+  //   return "My Recipes";
+  // }
 
   render() {
     let navMenu;
     if (this.props.currentUser) {
       navMenu = (
         <ul>
-          <li><Link to="/profile">{ this.userLink() }</Link></li>
+          <li><Link to="/profile">My Recipes</Link></li>
           <li><button onClick={ this.handleLogout }>Logout</button></li>
         </ul>
       );

@@ -7,7 +7,6 @@ class RecipeForm extends React.Component {
     super(props);
     this.state =  {
       title: "",
-      one_liner: "",
       ingredients: [""],
       directions: [""],
       image_url: "",
@@ -147,22 +146,14 @@ class RecipeForm extends React.Component {
 
   render () {
     return (
-      <div className="recipe-form-container">
         <form onSubmit={this.handleSubmit} className="recipe-form-box">
           <h1>Add New Recipe</h1>
-          <div className="recipe-form">
             <label>Title: <br />
               <input type="text"
                      value={this.state.title}
                      onChange={this.update("title")}
                      className="recipe-form-input" />
-            </label><br />
-            <label>Description: <br />
-              <input type="text"
-                     value={this.state.one_liner}
-                     onChange={this.update("one_liner")}
-                     className="recipe-form-input" />
-            </label><br />
+                 </label><br />
 
           <label>Ingredients: <br />
                 <div className="ingredients">
@@ -170,7 +161,7 @@ class RecipeForm extends React.Component {
                 </div>
             </label>
             <button className="add-input-button"
-                    onClick={this.addIngredient}>Add Ingredient</button><br />
+                    onClick={this.addIngredient}>Add Another Ingredient</button><br />
 
                   <label>Directions: <br />
                 <div className="directions">
@@ -178,7 +169,7 @@ class RecipeForm extends React.Component {
                 </div>
             </label>
             <button className="add-input-button"
-                    onClick={this.addDirection}>Add Direction</button><br />
+                    onClick={this.addDirection}>Add Next ]Direction</button><br />
             <label className="recipe-form-label">Image:
               <div className="image-form">
                 {this.handleImageSubmit()}
@@ -186,11 +177,16 @@ class RecipeForm extends React.Component {
             </label><br/>
 
           <input type='submit' value='Add Recipe' className="add-input-button"></input>
-          </div>
         </form>
-      </div>
     );
   }
 }
+
+// <label>Description: <br />
+//   <input type="text"
+//          value={this.state.one_liner}
+//          onChange={this.update("one_liner")}
+//          className="recipe-form-input" />
+// </label><br />
 
 export default withRouter(RecipeForm);

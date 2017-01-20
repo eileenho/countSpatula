@@ -3,59 +3,70 @@
   width: 100%;
   height: 75px;
   position: relative;
-  font-family: 'Siginika' sans-serif;
   display: flex;
   justify-content: space-between;
   flex-direction: row nowrap;
 
   .nav-logo {
     width: 225px;
-    padding: 20px 10px;
-    display: flex;
+    padding: 20px 50px;
+    font-family: 'Fredericka the Great', cursive;
+
 
     a {
       font-size: 28px;
-      padding-right: 40px;
+      padding: 1px;
       font-weight: 600;
-      color: #A4250D;
+      color: $red;
       text-decoration: none;
       cursor: pointer;
+      border-bottom: 5px solid $gray;
+      border-radius: 5px;
     }
   }
 
   .nav-menu {
-    padding-top: 25px;
     padding-right: 50px;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    justify-content: flex-end space-between;
+    align-items: center;
 
     ul {
       display: flex;
       flex-direction: row nowrap;
       list-style: none;
       align-items: baseline;
+      justify-content: space-between;
     }
 
     li a {
       font-size: 20px;
-      padding-right: 40px;
-      color: #272635;
+      border-radius: 4px;
+      // padding-right: 40px;
+      color: $dark-gray;
       text-decoration: none;
       cursor: pointer;
 
       &:hover {
-        color: #FFA513;
+        // color: white;
+        // background-color: $red
+        border-bottom: 5px solid $red;
+        border-radius: 5px;
       }
     }
 
     button {
-      font-family: 'Signika', sans-serif;
-      font-size: 16px;
+      font-size: 20px;
       padding: 5px;
       border-radius: 4px;
-      background-color: #A4250D;
-      color: white;
+      color: $dark-gray;
+      font-family: 'Raleway', sans-serif;
+
 
       &:hover {
-        background-color: #292F36;;
+        background-color: $red;
+        color: white;
       }
     }
   }

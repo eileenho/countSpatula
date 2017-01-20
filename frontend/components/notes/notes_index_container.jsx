@@ -7,7 +7,7 @@ import { notesArray } from '../../reducers/selectors';
 const mapStateToProps = ( state, ownProps ) => {
   return {
     recipe: ownProps.recipe,
-    notes: notesArray(state)
+    notes: notesArray(state).slice().reverse()
   };
 };
 

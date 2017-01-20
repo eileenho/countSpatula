@@ -7,24 +7,27 @@
   background-repeat: no-repeat;
   background-attachment: center fixed;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .profile-heading {
-  margin: auto;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   padding: 10px;
 }
 
 .show-recipe-form-button {
-  font-family: 'Signika', sans-serif;
-  font-size: 24px;
-  padding: 5px 25px;
+  font-size: 20px;
+  padding: 5px;
   border-radius: 4px;
-  background-color: #A4250D;
-  color: white;
+  color: $dark-gray;
+  font-family: 'Raleway', sans-serif;
+  background-color: white;
 
   &:hover {
-    background-color: #292F36;;
+    background-color: $blue;
+    color: white;
   }
 }

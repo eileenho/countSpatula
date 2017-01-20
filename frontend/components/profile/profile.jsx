@@ -29,10 +29,8 @@ class Profile extends React.Component {
   render () {
     return (
       <div className="profile">
-        <div className="tags-search-container">
-          <TagsSearchContainer /><br />
-        </div>
         <div className="profile-heading">
+          <TagsSearchContainer /><br />
           <button onClick={ this.onClick } className="show-recipe-form-button">{ this.buttonText() }</button>
         </div>
         { this.state.showRecipeForm && <RecipeFormContainer /> }

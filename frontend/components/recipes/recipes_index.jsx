@@ -5,7 +5,6 @@ class RecipeIndex extends React.Component {
 
   constructor(props) {
     super(props);
-    debugger
   }
 
   componentDidMount() {
