@@ -44,6 +44,12 @@ class Api::TagsController < ApplicationController
     render :search
   end
 
+  def recipes
+    @tag = Tag.find(params[:id])
+    @recipes = @tag.recipes
+    render :recipes
+  end
+
   private
 
   def tag_params

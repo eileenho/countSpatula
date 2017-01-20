@@ -12,14 +12,22 @@ class TagsSearch extends React.Component {
     this.updateInputVal = this.updateInputVal.bind(this);
     this.updateTagName = this.updateTagName.bind(this);
     this.renderResults = this.renderResults.bind(this);
+    this.fetchRecipes = this.fetchRecipes.bind(this);
   }
 
   updateInputVal(e) {
     this.setState({
-        inputVal: e.target.value
+      inputVal: e.target.value
     });
-    this.props.searchTags(e.target.value)
-      .then(tags => this.setState({tags: tags.tags}));
+    if (e.target.value === "") {
+      this.props.requestAllRecipes();
+      this.setState({
+        tags: []
+      });
+    } else {
+      this.props.searchTags(e.target.value)
+        .then(tags => this.setState({tags: tags.tags}));
+    }
   }
 
   updateTagName() {
@@ -30,11 +38,18 @@ class TagsSearch extends React.Component {
     }
   }
 
+  fetchRecipes(id) {
+    return e => {
+      e.preventDefault();
+      this.props.requestRecipesByTag(id);
+    };
+  }
+
   renderResults(tags) {
     if (tags) {
       return (
         <ul>
-          { tags.map((tag, i) => <li key={i}>{tag.name}</li>) }
+          { tags.map((tag, i) => <li key={i}><button onClick={this.fetchRecipes(tag.id)}>{tag.name}</button></li>) }
         </ul>
       );
     }

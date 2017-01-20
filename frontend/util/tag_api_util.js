@@ -49,3 +49,10 @@ export const searchTags = query => (
     data: { query }
   })
 );
+
+export const fetchRecipesByTag = id => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/tags/${id}/recipes`
+  })
+);

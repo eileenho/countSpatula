@@ -1,4 +1,5 @@
 import * as TagApiUtil from '../util/tag_api_util';
+import { receiveAllRecipes } from './recipe_actions';
 
 export const RECEIVE_TAGS = "RECEIVE_TAGS";
 export const RECEIVE_TAG = "RECEIVE_TAG";
@@ -31,6 +32,10 @@ export const deleteTagging = (tag, recipeId) => dispatch => (
 
 export const searchTags = query => dispatch => (
   TagApiUtil.searchTags(query).then(tags => dispatch(receiveTags(tags)))
+);
+
+export const requestRecipesByTag = id => dispatch => (
+  TagApiUtil.fetchRecipesByTag(id).then(recipes => dispatch(receiveAllRecipes(recipes)))
 );
 
 export const receiveTags = tags => ({

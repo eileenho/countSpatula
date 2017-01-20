@@ -51,7 +51,7 @@ class EditRecipeForm extends React.Component {
         <div>
           <input type="text"
                value={ingredient}
-               key={i}
+               key={Math.random()}
                onChange={this.editIngredient(i)}
                className="recipe-form-input" /><br />
         </div>
@@ -84,7 +84,7 @@ class EditRecipeForm extends React.Component {
         <div>
           <input type="text"
              value={direction}
-             key={i}
+             key={Math.random()}
              onChange={this.editDirection(i)}
              className="recipe-form-input"/><br />
          </div>

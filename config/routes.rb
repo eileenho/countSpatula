@@ -9,12 +9,13 @@ Rails.application.routes.draw do
     resources :tags, only: [:index, :show, :create, :destroy] do
       collection do
         get 'search', to: 'tags#search'
+        get ':id/recipes', to: 'tags#recipes'
       end
     end
   end
 
+
   get 'api/recipes/:id/tags', to: 'api/recipes#tags'
-  # get 'api/tags/search', to: 'api/tags#search'
   delete 'api/tagging/:id', to: 'api/tags#destroyTagging'
 
 end
