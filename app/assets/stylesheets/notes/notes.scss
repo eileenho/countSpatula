@@ -2,37 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// .notes img {
-//
-//     width: 150px;
-//     // max-width: 100%;
-//   }
-//
-//   .notes-form {
-//     width: inherit;
-//   }
-//
-//   .notes-index-container {
-//     width: inherit;
-//   }
-// }
+
+.notes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px;
+  margin: 15px;
+}
 
 .notes-index-item {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: inherit;
+  width: 100%;
+  font-size: 16px;
+  border: 1px solid $gray;
+  margin: 15px;
+}
+
+.notes-index-note {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.notes-index-image {
+  align-content: center;
+  padding: 5px;
 
   img {
     width: 100px;
-    // max-width: 100%;
-  }
-
-  .notes-index-note {
-    display: flex;
-    flex-direction: column;
-    font-size: 18px;
-    padding: 10px;
-
   }
 }

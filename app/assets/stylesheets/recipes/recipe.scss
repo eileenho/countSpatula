@@ -1,14 +1,13 @@
 .show-recipe-container {
   margin: auto;
-  font-family: 'Signika', sans-serif;
-  font-size: 28px;
   background-image: url('http://res.cloudinary.com/di8mt9hbc/image/upload/v1484542663/wood-911002_1920_phredk.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  height: 95vh;
+  background-attachment: center fixed;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  line-height: 1.5;
 }
 
 .recipe-nav-bar {
@@ -50,15 +49,6 @@
   padding: 5px;
 }
 
-.notes {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-content: flex-start;
-  padding: 10px;
-}
-
-
 .recipe-container {
   display: flex;
   flex-direction: column;
@@ -67,6 +57,7 @@
   margin-top: 10px;
   margin-bottom: 10px;
   width: 66%;
+  height: 100%;
   box-shadow: 0 0 5px black;
 }
 
@@ -92,12 +83,14 @@
     font-size: 20px;
     padding: 5px;
     font-family: 'Raleway', sans-serif;
+    font-weight: bold;
   }
 
   .ingredients {
     font-size: 16px;
     list-style: circle;
-  }
+    font-family: 'Open Sans', sans-serif;
+   }
 }
 
 .recipe-directions {
@@ -106,10 +99,13 @@
   h2 {
     font-size: 20px;
     padding: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
   }
 
   .directions {
-    font-size: 14px;
+    font-size: 16px;
     list-style-type: decimal;
+    font-family: 'Open Sans', sans-serif;
   }
 }

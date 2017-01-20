@@ -32,8 +32,9 @@ class TagsForm extends React.Component {
         <input type="text"
                value={ this.state.name }
                onChange={ this.update("name") }
+               className="tag-form-input"
                required />
-             <input type="submit" value="Add Tag"></input>
+             <input className="tag-form-button" type="submit" value="Add Tag"></input>
       </form>
     );
   }
