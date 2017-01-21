@@ -8,13 +8,13 @@ http://www.spatula.site
 ##Features
 
 ###Account creation, login, and guest/demo login
-[login]
+![login][login]
 
 Authentication was implemented on the backend in Rails, keeping user passwords safe by utilizing the BCrypt gem.  A guest login is available for users to experience the site before signing up.
 
 ###User profile page featuring a user's recipe collection
 
-[profile]
+![profile][profile]
 
 Upon login, a user is directed to their profile page, which immediately renders their entire recipe collection.
 
@@ -22,7 +22,7 @@ Upon login, a user is directed to their profile page, which immediately renders 
 A join table was created to link recipe's with tags.  Users can search for recipes through this tagging association.
 
 ###Recipe pages that display recipe details
-[notes]
+![notes][notes]
 
 Each recipe page shows details for each recipe.  Users are able to create and delete recipes, as well as add notes for each recipe.
 
@@ -39,6 +39,6 @@ Spatula was built using Ruby on Rails and React Redux.
 * Interaction between users (ability to share recipes and view notes feed)
 * Filter recipes through multiple tags
 
-[profile]: ./docs/notes.png
+[notes]: ./docs/notes.png
 [login]: ./docs/login.png
 [profile]: ./docs/profile.png
