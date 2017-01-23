@@ -41,6 +41,11 @@ class Api::TagsController < ApplicationController
   def search
     if params[:query]
       @tags = Tag.all.where("LOWER(name) ~ LOWER(?)", params[:query]).limit(5)
+      recipe_ids = []
+      current_user.recipes.each { |recipe| recipe_ids << recipe.id }
+      taggings_tag_id = []
+      Tagging.all.each { |tagging| taggings_tag_id << tagging.tag_id if recipe_ids.include?(tagging.recipe_id) }
+      @tags = @tags.select{ |tag| taggings_tag_id.include?(tag.id) }
     else
       @tags = Tag.none
     end
