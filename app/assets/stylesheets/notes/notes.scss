@@ -9,16 +9,23 @@
   align-items: flex-start;
   padding: 15px;
   margin: 15px;
+  align-items: center;
+
+}
+
+.notes-index-container {
+  width: 284px;
 }
 
 .notes-index-item {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100%;
   font-size: 16px;
   border: 1px solid $gray;
   margin: 15px;
+  border-radius: 4px;
+  background-color: white;
 }
 
 .notes-index-note {
@@ -26,6 +33,11 @@
   flex-direction: column;
   font-size: 16px;
   padding: 5px;
+  width: 100%;
+
+  h1 {
+    font-style: italic;
+  }
 }
 
 .notes-index-image {
@@ -34,5 +46,21 @@
 
   img {
     width: 100px;
+  }
+}
+
+.delete-note-button {
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: rgba(236, 241, 242, 0.8);
+  border: 1px solid $dark-gray;
+  // background-image: url("http://res.cloudinary.com/di8mt9hbc/image/upload/v1485126484/trash_hejvd4.png");
+  // background-size: contain;
+  // background-repeat: no-repeat;
+  padding: 2px;
+
+  &:hover {
+    background-color: $red;
+    color: white;
   }
 }

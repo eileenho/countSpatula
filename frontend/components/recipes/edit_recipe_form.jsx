@@ -121,14 +121,14 @@ class EditRecipeForm extends React.Component {
       if(this.state.image_url === ""){
         return(
           <div>
-            <button onClick={this.cloudinate}>Add Image</button>
+            <button classname="image-button" onClick={this.cloudinate}>Add Image</button>
           </div>
         );
       } else {
         return(
           <div>
             <img src={this.state.image_url}/>
-            <button onClick={this.removeImage}>Replace Image</button>
+            <button className="image-button" onClick={this.removeImage}>Replace Image</button>
           </div>
         );
       }
@@ -154,41 +154,32 @@ class EditRecipeForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="recipe-form-box">
           <h1>Edit Recipe</h1>
           <div className="recipe-form">
-            <label className="recipe-form-label">Image:
+            <label className="form-label">Image:
               <div className="image-form">
                 {this.handleImageSubmit()}
               </div>
             </label><br/>
-            <label>Title: <br />
+            <label className="form-label">Title:</label> <br />
               <input type="text"
                      value={this.props.recipe.title}
                      onChange={this.update("title")}
-                     className="recipe-form-input" />
-            </label><br />
-            <label>Description: <br />
-              <input type="text"
-                     value={this.state.one_liner}
-                     onChange={this.update("one_liner")}
-                     className="recipe-form-input" />
-            </label><br />
+                     className="recipe-form-input" /><br />
 
-            <label>Ingredients <br />
+            <label className="form-label">Ingredients </label><br />
                 <div className="ingredients">
                   {this.showIngredient()}
                 </div>
-            </label>
             <button className="add-input-button"
                     onClick={this.addIngredient}>Add Ingredient</button><br />
 
-                  <label>Directions <br />
+                  <label className="form-label">Directions </label><br />
                 <div className="directions">
                   {this.showDirection()}
                 </div>
-            </label>
             <button className="add-input-button"
                     onClick={this.addDirection}>Add Direction</button><br />
 
-          <input type='submit' value='Update Recipe'></input>
+            <input className="add-input-button" type='submit' value='Update Recipe'></input>
           </div>
         </form>
       </div>

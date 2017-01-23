@@ -1,9 +1,12 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+import { withRouter, hashHistory } from 'react-router';
 
 class NotesIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      recipeId: this.props.note.recipe_id
+    };
     this.defaultImage = this.defaultImage.bind(this);
   }
 
@@ -15,9 +18,17 @@ class NotesIndexItem extends React.Component {
     }
   }
 
+  deleteNote() {
+    const deleteConfirm = confirm("Delete this note?");
+    if (deleteConfirm === true) {
+      this.props.deleteNote(this.props.note.id);
+      hashHistory.replace(`profile/${this.props.params.id}`);
+    }
+  }
+
   render() {
     const { note } = this.props;
-    
+
     return (
       <div className="notes-index-item">
         <div className="notes-index-image">
@@ -25,7 +36,8 @@ class NotesIndexItem extends React.Component {
         </div>
         <div className="notes-index-note">
           <h1>Date: { note.cooked_date }</h1>
-          <p>Note: { note.note }</p>
+          <p>{ note.note }</p>
+          <button className="delete-note-button" onClick={ this.deleteNote.bind(this) }>Delete</button>
         </div>
       </div>
     );

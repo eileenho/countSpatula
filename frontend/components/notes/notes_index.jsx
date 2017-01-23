@@ -13,11 +13,11 @@ class NotesIndex extends React.Component {
 
   render() {
     const { notes } = this.props;
-    
+
     if (notes) {
       return (
         <div className="notes-index-container">
-          {notes.map(note => <NotesIndexItem key={note.id} note={note} />)}
+          {notes.map(note => <NotesIndexItem key={note.id} note={note} deleteNote = { this.props.deleteNote }/>)}
         </div>
       );
     } else {

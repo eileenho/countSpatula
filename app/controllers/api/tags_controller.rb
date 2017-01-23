@@ -1,4 +1,7 @@
 class Api::TagsController < ApplicationController
+
+  before_filter :require_logged_in
+
   def index
     @tags = Tag.all
   end
@@ -46,7 +49,7 @@ class Api::TagsController < ApplicationController
 
   def recipes
     @tag = Tag.find(params[:id])
-    @recipes = @tag.recipes
+    @recipes = @tag.recipes.select{ |recipe| recipe.user_id == current_user.id}
     render :recipes
   end
 

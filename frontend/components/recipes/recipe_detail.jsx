@@ -5,6 +5,16 @@ import RecipeTagsContainer from '../tags/recipe_tags_container';
 class RecipeDetail extends React.Component {
   constructor(props) {
     super(props);
+
+    this.defaultImage = this.defaultImage.bind(this);
+  }
+
+  defaultImage() {
+    if (this.props.recipe.image_url === "") {
+      return <div></div>;
+    } else {
+      return <img className="recipe-image" src={ this.props.recipe.image_url } />;
+    }
   }
 
   render () {
@@ -12,10 +22,12 @@ class RecipeDetail extends React.Component {
     return (
       <div className="recipe-container">
         <div className="recipe-header">
-          <img className="recipe-image" src={ recipe.image_url} />
+
           <h1 className="recipe-title">{ recipe.title }</h1>
+          <RecipeTagsContainer recipeId={this.props.recipe.id} />
+          { this.defaultImage() }
         </div>
-        <RecipeTagsContainer recipeId={this.props.recipe.id} />
+
         <div className="recipe-ingredients">
           <h2>Ingredients:</h2>
           <ul className="ingredients">

@@ -11,50 +11,65 @@
   h1 {
     font-size: 24px;
     text-align: center;
-  }
-
-  label {
-    border-bottom: 1px solid $blue;
-  }
-
-  input {
-    width: 450px;
-    height: 25px;
-    padding: 0px 6px;
-  }
-
-  // input:focus {
-  //   border: 1px solid #ffa513
-  // }
-
-  .add-input-button {
-    font-size: 16px;
-    padding: 5px;
+    margin: 10px;
+    border-bottom: 5px solid $gray;
     border-radius: 4px;
-
-    &:hover {
-      background-color: #292F36;
-      color: white;
-    }
+    padding: 5px;
+    color: $red;
   }
 
   img {
     width: 300px;
     max-width: 100%;
   }
+}
 
-  .image-button {
-    font-family: 'Signika', sans-serif;
-    font-size: 16px;
-    padding: 5px;
-    border-radius: 4px;
-    background-color: #ffa513;
-    color: black;
-    width: 200px;
+.recipe-form {
+  justify-content: center;
 
-    &:hover {
-      background-color: #292F36;
-      color: white;
-    }
+  input {
+    height: 30px;
+    padding: 0px 6px;
+    width: 90%;
+    margin: 1px;
+  }
+}
+
+.form-label {
+  padding: 5px 15px;
+  margin: 5px;
+  font-size: 20px;
+  color: $red;
+  font-weight: bold;
+}
+
+.add-input-button {
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid $dark-gray;
+  background-color: white;
+  color: $dark-gray;
+  margin: 1px;
+  font-family: 'Raleway' sans-serif;
+
+  &:hover {
+    background-color: $gray;
+    color: white;
+  }
+}
+
+.image-button {
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid $dark-gray;
+  background-color: white;
+  color: $dark-gray;
+  margin: 5px;
+
+  &:hover {
+    background-color: $gray;
+    color: white;
   }
 }

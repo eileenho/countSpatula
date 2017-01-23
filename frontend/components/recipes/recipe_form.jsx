@@ -56,8 +56,7 @@ class RecipeForm extends React.Component {
           <input type="text"
                value={ingredient}
                key={i}
-               onChange={this.editIngredient(i)}
-               className="recipe-form-input" /><br />
+               onChange={this.editIngredient(i)} /><br />
         </div>
       );
     }
@@ -89,8 +88,7 @@ class RecipeForm extends React.Component {
           <input type="text"
              value={direction}
              key={i}
-             onChange={this.editDirection(i)}
-             className="recipe-form-input"/><br />
+             onChange={this.editDirection(i)} /><br />
          </div>
       );
     }
@@ -148,45 +146,34 @@ class RecipeForm extends React.Component {
     return (
         <form onSubmit={this.handleSubmit} className="recipe-form-box">
           <h1>Add New Recipe</h1>
-            <label>Title: <br />
+          <div className="recipe-form">
+            <label className="form-label">Title: </label><br />
               <input type="text"
                      value={this.state.title}
-                     onChange={this.update("title")}
-                     className="recipe-form-input" />
-                 </label><br />
+                     onChange={this.update("title")} /><br />
 
-          <label>Ingredients: <br />
-                <div className="ingredients">
-                  {this.showIngredient()}
-                </div>
-            </label>
+            <label className="form-label">Ingredients: </label><br />
+              <div className="ingredients">
+                {this.showIngredient()}
+              </div>
             <button className="add-input-button"
                     onClick={this.addIngredient}>Add Another Ingredient</button><br />
 
-                  <label>Directions: <br />
-                <div className="directions">
-                  {this.showDirection()}
-                </div>
-            </label>
+            <label className="form-label">Directions: </label><br />
+              <div className="directions">
+                {this.showDirection()}
+              </div>
             <button className="add-input-button"
                     onClick={this.addDirection}>Add Next Direction</button><br />
-            <label className="recipe-form-label">Image:
+            <label className="form-label">Image:</label><br />
               <div className="image-form">
                 {this.handleImageSubmit()}
-              </div>
-            </label><br/>
-
+              </div><br/>
           <input type='submit' value='Add Recipe' className="add-input-button"></input>
-        </form>
+        </div>
+      </form>
     );
   }
 }
-
-// <label>Description: <br />
-//   <input type="text"
-//          value={this.state.one_liner}
-//          onChange={this.update("one_liner")}
-//          className="recipe-form-input" />
-// </label><br />
 
 export default withRouter(RecipeForm);

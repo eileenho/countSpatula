@@ -11,11 +11,15 @@ class Recipe extends React.Component {
     super();
     this.state = {
       showEditRecipeForm: false,
+      showNoteForm: false,
     };
 
-    this.onClick = this.onClick.bind(this);
+    this.onClickRecipe = this.onClickRecipe.bind(this);
+    this.onClickNote = this.onClickNote.bind(this);
     this.buttonText = this.buttonText.bind(this);
-    this.toggleVisible = this.toggleVisible.bind(this);
+    this.noteButtonText = this.noteButtonText.bind(this);
+    this.toggleVisibleRecipe = this.toggleVisibleRecipe.bind(this);
+    this.toggleVisibleNote = this.toggleVisibleNote.bind(this);
   }
 
   componentDidMount() {
@@ -23,13 +27,22 @@ class Recipe extends React.Component {
     this.props.requestRecipeTags(this.props.recipeId);
   }
 
-  onClick(e) {
+  onClickRecipe(e) {
     e.preventDefault();
     this.setState({ showEditRecipeForm: !this.state.showEditRecipeForm });
   }
 
-  toggleVisible() {
+  onClickNote(e) {
+    e.preventDefault();
+    this.setState({ showNoteForm: !this.state.showNoteForm });
+  }
+
+  toggleVisibleRecipe() {
     this.setState({ showEditRecipeForm: false });
+  }
+
+  toggleVisibleNote() {
+    this.setState({ showNoteForm: false });
   }
 
   buttonText() {
@@ -37,6 +50,14 @@ class Recipe extends React.Component {
       return "Hide Form";
     } else {
       return "Edit Recipe";
+    }
+  }
+
+  noteButtonText() {
+    if (this.state.showNoteForm) {
+      return "Hide Form";
+    } else {
+      return "Add Note";
     }
   }
 
@@ -55,17 +76,18 @@ class Recipe extends React.Component {
         <div className="show-recipe-container">
           <div className="recipe-nav-bar">
             <div className="recipe-options">
-              <button className="recipe-options-button" onClick={ this.onClick }>{ this.buttonText() }</button>
+              <button className="recipe-options-button" onClick={ this.onClickRecipe }>{ this.buttonText() }</button>
               <button className="recipe-options-button" onClick={ this.deleteRecipe.bind(this) }>Delete Recipe</button>
               <div className="recipe-edit-form">
-                { this.state.showEditRecipeForm && <EditRecipeFormContainer { ...this.props } toggleVisible={this.toggleVisible} /> }
+                { this.state.showEditRecipeForm && <EditRecipeFormContainer { ...this.props } toggleVisible={this.toggleVisibleRecipe} /> }
               </div>
             </div>
           </div>
           <div className="large-recipe-container">
             <RecipeDetail recipe={recipe} />
             <div className="notes">
-              <NoteFormContainer recipeId={this.props.recipe.id}/>
+              <button className="show-note-form-button" onClick={ this.onClickNote }>{ this.noteButtonText() }</button>
+              { this.state.showNoteForm && <NoteFormContainer recipeId={this.props.recipe.id} toggleVisibleNote={this.toggleVisibleNote} /> }
               <NotesIndexContainer recipe={this.props.recipe} />
             </div>
           </div>
@@ -76,7 +98,5 @@ class Recipe extends React.Component {
     }
   }
 }
-
-
 
 export default withRouter(Recipe);

@@ -51,4 +51,9 @@
   background-color: $red;
   color: white;
   margin: 5px;
+
+  &:hover {
+    background-color: $gray;
+    color: white;
+  }
 }

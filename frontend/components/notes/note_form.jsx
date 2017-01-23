@@ -10,6 +10,8 @@ class NoteForm extends React.Component {
       cooked_date: "",
       recipe_id: this.props.recipeId
     };
+    this.toggleVisibleNote = this.props.toggleVisibleNote;
+
     this.cloudinate = this.cloudinate.bind(this);
     this.removeImage = this.removeImage.bind(this);
     this.handleImageSubmit = this.handleImageSubmit.bind(this);
@@ -51,14 +53,14 @@ class NoteForm extends React.Component {
       if(this.state.image_url === ""){
         return(
           <div>
-            <button onClick={this.cloudinate}>Add Image</button>
+            <button className="image-button" onClick={this.cloudinate}>Add Image</button>
           </div>
         );
       } else {
         return(
           <div>
             <img src={this.state.image_url}/><br />
-            <button onClick={this.removeImage}>Replace Image</button>
+            <button className="image-button" onClick={this.removeImage}>Replace Image</button>
           </div>
         );
       }
@@ -73,6 +75,7 @@ class NoteForm extends React.Component {
         cooked_date: "",
       })
     ));
+    this.toggleVisibleNote();
   }
 
   render() {
@@ -96,7 +99,7 @@ class NoteForm extends React.Component {
               { this.handleImageSubmit() }
             </div>
           </label><br/>
-        <input type='submit' value='Add Note'></input>
+        <input className="add-input-button" type='submit' value='Add Note'></input>
       </form>
     );
   }
