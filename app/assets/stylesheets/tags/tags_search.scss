@@ -1,11 +1,27 @@
 
 .tag-search-form {
   display: flex;
+  flex-direction: row;
   flex-flow: nowrap;
+}
+
+.search-results-list {
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
 }
 
 .search-result-tag {
   font-size: 16px;
+  padding: 5px;
+  border: 1px solid $gray;
+  border-radius: 4px;
+  margin: 5px;
+
+  &:hover {
+    background-color: white;
+  }
+
 }
 
 .tags-search-input {
@@ -15,5 +31,5 @@
   font-size: 16px;
   height: 30px;
   margin: 10px;
-  min-width: 200px;
+  min-width: 400px;
 }

@@ -48,7 +48,7 @@ class TagsSearch extends React.Component {
   renderResults(tags) {
     if (tags) {
       return (
-        <ul>
+        <ul className="search-results-list">
           { tags.map((tag, i) => <li key={i}><button className="search-result-tag" onClick={this.fetchRecipes(tag.id)}>{tag.name}</button></li>) }
         </ul>
       );
