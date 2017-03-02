@@ -47,6 +47,22 @@
 
 }
 
+.demo-form-button {
+  width: 266px;
+  background: #292F36;
+  color: #ECF1F2;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 4px;
+  height: 30px;
+  border: 1px solid #c3c2c2;
+
+  &:hover {
+    background-color: $red;;
+  }
+
+}
+
 .login-input {
   background: white;
   margin-bottom: 10px;

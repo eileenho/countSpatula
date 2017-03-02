@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
       username: "",
       password: ""
     };
+    this.loginGuest = this.loginGuest.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -39,7 +40,6 @@ class SessionForm extends React.Component {
 		this.props.processForm({user}).then(() => this.props.router.push('/profile'));
 	}
 
-
   navLink() {
     if (this.props.formType === "login") {
       return <Link to="/signup">Sign Up</Link>;
@@ -66,6 +66,12 @@ class SessionForm extends React.Component {
     );
   }
 
+  loginGuest(e) {
+    e.preventDefault();
+    const guest = { user: {username: "guest", password: "password"}};
+    this.props.login(guest).then(() => this.props.router.push('/profile'));
+  }
+
   render() {
     return (
       <div className="welcome-background">
@@ -88,7 +94,9 @@ class SessionForm extends React.Component {
                        onChange={this.update("password")}
                        className="login-input" />
               <br />
-              <button className="form-button" type="submit">{ this.buttonValue() }</button>
+              <button className="form-button" type="submit">{ this.buttonValue() }</button><br /><br />
+              <label>Login as guest:</label><br />
+              <button className="demo-form-button" onClick={ this.loginGuest }>Demo</button>
             </div>
           </form>
         </div>

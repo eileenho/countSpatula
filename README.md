@@ -1,6 +1,6 @@
 #Spatula
 
-[Spatula link][spatula] is an online recipe storage site where users can save and keep track of their recipes.
+[Spatula][spatula] is an online recipe storage site where users can save and keep track of their recipes.
 
 [spatula]:
 http://www.spatula.site
