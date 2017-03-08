@@ -21,11 +21,11 @@ class Welcome extends React.Component {
           <h1>Welcome to Spatula</h1>
           <p>A personal, online recipe storage site</p>
           <div className="welcome-links">
-            <Link to="/login" className='login'>LOGIN</Link>
-            <Link to="/signup" className='signup'>SIGN UP</Link>
-            or Take a Tour as
-            <button className="demo-form-button" onClick={ this.loginGuest }>Guest</button>
+            <Link to="/login" className='login'>Log In</Link>
+            <Link to="/signup" className='signup'>Sign Up</Link>
           </div>
+            or Take a Tour as
+            <button className="guest-button" onClick={ this.loginGuest }>Guest</button>
         </div>
       </div>
     );
