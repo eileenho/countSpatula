@@ -14,9 +14,11 @@ class RecipeForm extends React.Component {
     };
     this.addIngredient = this.addIngredient.bind(this);
     this.editIngredient = this.editIngredient.bind(this);
+    this.deleteIngredient = this.deleteIngredient.bind(this);
     this.showIngredient = this.showIngredient.bind(this);
     this.addDirection = this.addDirection.bind(this);
     this.editDirection = this.editDirection.bind(this);
+    this.deleteDirection = this.deleteDirection.bind(this);
     this.showDirection = this.showDirection.bind(this);
     this.cloudinate = this.cloudinate.bind(this);
     this.removeImage = this.removeImage.bind(this);
@@ -49,6 +51,10 @@ class RecipeForm extends React.Component {
     };
   }
 
+  deleteIngredient(i) {
+
+  }
+
   showIngredient() {
     if (this.state.ingredients) {
       return this.state.ingredients.map( (ingredient, i) =>
@@ -56,7 +62,9 @@ class RecipeForm extends React.Component {
           <input type="text"
                value={ingredient}
                key={i}
-               onChange={this.editIngredient(i)} /><br />
+               onChange={this.editIngredient(i)} />
+          <button className="add-input-button"
+                  onClick={this.deleteIngredient(i)}>X</button><br />
         </div>
       );
     }
@@ -81,6 +89,10 @@ class RecipeForm extends React.Component {
     };
   }
 
+  deleteDirection(i) {
+
+  }
+
   showDirection() {
     if (this.state.directions) {
       return this.state.directions.map( (direction, i) =>
@@ -88,7 +100,9 @@ class RecipeForm extends React.Component {
           <input type="text"
              value={direction}
              key={i}
-             onChange={this.editDirection(i)} /><br />
+             onChange={this.editDirection(i)} />
+          <button className="add-input-button"
+                  onClick={this.deleteDirection(i)}>X</button> <br />
          </div>
       );
     }
